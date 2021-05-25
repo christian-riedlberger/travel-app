@@ -9,6 +9,7 @@ const request = require('request-promise')
 const forecast = (location, forecastInfo) => {
     const url = 'http://api.weatherapi.com/v1/forecast.json?key=66045d2b05a14061be5155922212105&q=' + location + '&aqi=no&days=5'
 
+
     request({url, json: true})
         .then(( body ) => {
 

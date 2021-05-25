@@ -1,4 +1,4 @@
-const getCities = require('./cities')
+const citiesTable = require('./citiesTable')
 
 /**
  * Fetches city's description
@@ -7,15 +7,17 @@ const getCities = require('./cities')
  */
 const getCityInfo = (id, cityInfo) => {
 
-    getCities((error, cities) => {
-        if (error) {
-            cityInfo('Unable to read file')
-        }
+    // getCities((error, cities) => {
+    //     if (error) {
+    //         cityInfo('Unable to read file')
+    //     }
 
-        const city = cities.find(city => id === city.id) 
+        cityArray = citiesTable.cities
+
+        const city = cityArray.find(city => id === city.id)
 
         cityInfo(undefined, city) 
-    })
+    // })
 
 }
 

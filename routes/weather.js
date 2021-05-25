@@ -24,7 +24,6 @@ router.post('/', function(req, res, next) {
                 })  
             }
 
-            
             res.send({
                 forecast: forecastData,
                 city
