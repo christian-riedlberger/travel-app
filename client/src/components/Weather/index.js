@@ -63,6 +63,7 @@ class Weather extends PureComponent {
                             <FormControl className={classes.formControl}>
                                 <InputLabel id="select-label">Forecast</InputLabel>
                                 <Select className={classes.selectBox}
+                                    data-cy='selectForecast'
                                     labelId="select-label"
                                     margin="dense"
                                     variant="outlined"
@@ -72,6 +73,7 @@ class Weather extends PureComponent {
                                 >
                                 {_.map(configTable.menu, option => (
                                     <MenuItem
+                                        data-cy={option.description}
                                         id={option.id}
                                         value={option.description}
                                     >
@@ -88,7 +90,7 @@ class Weather extends PureComponent {
                         alignItems="center"
                         >
                         {_.map(filteredForecast, (forecast, index) => (
-                            <Grid item xs={2}>
+                            <Grid item xs={2} data-cy={'forecast' + index}>
                                 <Paper className={classes.paper}>
                                     <div>{forecast.dayOfWeek}</div>
                                     <div>{forecast.date}</div>

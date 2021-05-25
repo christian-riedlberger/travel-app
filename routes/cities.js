@@ -1,6 +1,5 @@
 var express = require('express')
 var router = express.Router()
-const getCities = require('../src/utils/cities')
 const citiesTable = require('../src/utils/citiesTable')
 
 /**

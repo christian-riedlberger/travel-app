@@ -111,6 +111,7 @@ class App extends PureComponent {
                             <FormControl className={classes.formControl}>
                                 <InputLabel id="select-label">Location</InputLabel>
                                 <Select className={classes.selectBox}
+                                    data-cy='selectCity'
                                     labelId="select-label"
                                     margin="dense"
                                     variant="outlined"
@@ -119,6 +120,7 @@ class App extends PureComponent {
                                 >
                                 {_.map(this.state.cities, option => (
                                     <MenuItem
+                                        data-cy={option.label}
                                         key={option.id}
                                         id={option.id}
                                         value={option.label}
@@ -135,7 +137,10 @@ class App extends PureComponent {
                             alignItems="center"
                         >
                             {this.state.description &&
-                                <Grid item xs={10}>
+                                <Grid 
+                                    item xs={10}
+                                    data-cy="description"
+                                >
                                     <Paper className={classes.paper}>{this.state.description}</Paper>
                                 </Grid>
                             }    
