@@ -3,6 +3,7 @@ const citiesTable = {
         {
             "id" : "01",
             "label" : "Montreal",
+            "image" : "montreal.jpg",
             "description" : [ 
                                 "Montreal, Quebec, incorporated as a city in 1832, population 1,704,694 (2016 c), 1,649,519 (2011 c).",
                                 " Montreal is Canada’s second largest city and is home to nearly half of the province of Quebec’s",
@@ -14,6 +15,7 @@ const citiesTable = {
         {
             "id" : "02",
             "label" : "Toronto",
+            "image" : "toronto.jpg",
             "description" : [
                                 "Toronto, Ontario, incorporated as a city in 1834, population 2,731,571 (2016 census), 2,615,060 (2011 census).",
                                 " Toronto is Ontario’s capital city, Canada’s largest municipality and the fourth largest city in North America.",
@@ -25,6 +27,7 @@ const citiesTable = {
         {
             "id" : "03",
             "label" : "Edmonton",
+            "image" : "edmonton.jpg",
             "description" : [
                                 "Edmonton is the capital city of the province of Alberta, Canada. Sometimes called Canada's Gateway",
                                 " to the North, Edmonton is the farthest north of Canada's large cities and has important road, rail ",
@@ -35,6 +38,7 @@ const citiesTable = {
         {
             "id" : "04",
             "label" : "Vancouver",
+            "image" : "vancouver.jpg",
             "description" : [
                                 "Vancouver is a Canadian city in the province of British Columbia. It is the largest metropolitan",
                                 "centre in western Canada and third largest in Canada. The city's population is 2,132,824. Vancouver is one of the",  
@@ -48,6 +52,7 @@ const citiesTable = {
         {
             "id" : "04",
             "label" : "Halifax",
+            "image" : "halifax.jpg",
             "description" : [
                                 "Halifax, Nova Scotia, incorporated as a city in 1841, population 403,131 (2016 c), 390,096 (2011 c). Halifax is", 
                                 "the capital of Nova Scotia and the largest urban area in Atlantic Canada. On 1 April 1996 Halifax was amalgamated",

@@ -37,6 +37,7 @@ class App extends PureComponent {
             location: '', 
             forecasts: '',
             description: '',
+            image: '',
             cities: [],
             error: ''
          };
@@ -61,10 +62,12 @@ class App extends PureComponent {
                 })
             }
             else {
+                console.log(res.data.city)
                 this.setState({
                     location: location.name, 
                     forecasts: res.data.forecast,
-                    description: res.data.city.description 
+                    description: res.data.city.description,
+                    image: res.data.city.image 
                 })
             }
           
@@ -100,6 +103,8 @@ class App extends PureComponent {
 
     render() {
         const { classes } = this.props;
+
+        const imageSource = 'img/' + this.state.image;
 
         return (
                 <div>
@@ -137,12 +142,15 @@ class App extends PureComponent {
                             alignItems="center"
                         >
                             {this.state.description &&
-                                <Grid 
-                                    item xs={10}
-                                    data-cy="description"
-                                >
-                                    <Paper className={classes.paper}>{this.state.description}</Paper>
-                                </Grid>
+                                <div>
+                                    <img src={imageSource} alt=""/>
+                                     <Grid 
+                                        item xs={10}
+                                        data-cy="description"
+                                    >
+                                        <Paper className={classes.paper}>{this.state.description}</Paper>
+                                    </Grid>
+                                </div>
                             }    
                         </Grid>
                         <Weather 
