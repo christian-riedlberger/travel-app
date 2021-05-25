@@ -50,7 +50,7 @@ const citiesTable = {
                             ]  
         },
         {
-            "id" : "04",
+            "id" : "05",
             "label" : "Halifax",
             "image" : "halifax.jpg",
             "description" : [

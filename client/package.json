@@ -11,6 +11,7 @@
     "axios": "^0.21.1",
     "enzyme": "3.0.0",
     "enzyme-adapter-react-16": "1.0.0",
+    "flow-bin": "^0.151.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "raf": "3.3.2",
@@ -24,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest --config=jest.config.json",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "flow": "flow"
   },
   "eslintConfig": {
     "extends": [

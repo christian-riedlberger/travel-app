@@ -1,3 +1,4 @@
+// @flow
 import _ from 'lodash';
 import React, { PureComponent } from "react";
 import { withStyles } from '@material-ui/core/styles';
@@ -15,6 +16,19 @@ import {
     fetchForecast
 } from '../actions/ActionTravel';
 
+type Props = {
+    classes: Object
+};
+
+type State = {
+    location: string,
+    error: string,
+    description: string,
+    image: string,
+    cities: Array<Object>,
+    forecasts: Array<Object>
+};
+
 const styles = {
     formControl: {
       margin: '1em',
@@ -30,12 +44,15 @@ const styles = {
     },
 };
 
-class App extends PureComponent {
-    constructor(props) {
+/**
+ * Main app for project
+ */
+class App extends PureComponent<Props, State>  {
+    constructor(props: Props) {
         super(props);
         this.state = {
             location: '', 
-            forecasts: '',
+            forecasts: [],
             description: '',
             image: '',
             cities: [],
@@ -46,7 +63,8 @@ class App extends PureComponent {
 
     
     /**
-     *  Called whenever location is changed
+     * Changes description and image when city is selected
+     * @param event 
      */
     handleChange = (e) => {
         const location = {
@@ -78,10 +96,10 @@ class App extends PureComponent {
 
     }
 
-    componentDidMount() {
     /**
-     *  Fetches all cities for dropdown menu
+     * Fetches all ciities to fill drodown select
      */
+    componentDidMount() {
        fetchCities()
        .then(res => {
             if (res.data.error) {
@@ -101,6 +119,9 @@ class App extends PureComponent {
     }
 
 
+    /**
+     * Renders component
+     */
     render() {
         const { classes } = this.props;
 

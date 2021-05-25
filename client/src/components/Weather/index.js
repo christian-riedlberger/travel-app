@@ -1,3 +1,4 @@
+// @flow
 import _ from 'lodash';
 import React, { PureComponent } from "react";
 import { withStyles } from '@material-ui/core/styles';
@@ -9,6 +10,18 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import configTable from './config/configTable';
 // import "../App.css";
+
+type Props = {
+    forecasts: Array<Object>,
+    description: String,
+    classes: Object
+};
+
+type State = {
+    count: number,
+    error: string,
+    forecast: string
+};
 
 const styles = {
     formControl: {
@@ -25,18 +38,22 @@ const styles = {
     },
 };
 
-class Weather extends PureComponent {
-    constructor(props) {
+/**
+ * Displays weather forecast
+ */
+class Weather extends PureComponent<Props, State> {
+    constructor(props: Props) {
         super(props);
         this.state = {
-            count: '1',
+            count: 1,
             error: '',
             forecast: 'One Day'
          };
     }
    
     /**
-     *  Called whenever forecast is changed
+     * Called whenever forecast days are changed
+     * @param event
      */
     handleChange = (e) => {
         this.setState({
@@ -45,6 +62,9 @@ class Weather extends PureComponent {
         })
     }
 
+    /**
+     * Renders component
+     */
     render() {
         const { classes, forecasts, description } = this.props;
 
