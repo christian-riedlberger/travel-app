@@ -26,12 +26,19 @@ type State = {
 const styles = {
     formControl: {
       margin: '1em',
-      minWidth: 120,
+      minWidth: 220,
+
+      '& .MuiFormLabel-root': {
+        position: 'relative!important',
+        top: '28px',
+        left: '-47px'
+      }
     },
     selectBox: {
       textAlign: 'center' 
     },
     paper: {
+        background: '#f2f2f2',
         padding: '2em',
         textAlign: 'center',
         color: 'grey'
@@ -59,7 +66,7 @@ class Weather extends PureComponent<Props, State> {
         this.setState({
             forecast: e.target.value,
             count:  e.currentTarget.id
-        })
+        });
     }
 
     /**
@@ -93,6 +100,7 @@ class Weather extends PureComponent<Props, State> {
                                 >
                                 {_.map(configTable.menu, option => (
                                     <MenuItem
+                                        key={option.id}
                                         data-cy={option.description}
                                         id={option.id}
                                         value={option.description}
@@ -110,7 +118,7 @@ class Weather extends PureComponent<Props, State> {
                         alignItems="center"
                         >
                         {_.map(filteredForecast, (forecast, index) => (
-                            <Grid item xs={2} data-cy={'forecast' + index}>
+                            <Grid key={forecast.date} item xs={4} data-cy={'forecast' + index}>
                                 <Paper className={classes.paper}>
                                     <div>{forecast.dayOfWeek}</div>
                                     <div>{forecast.date}</div>
